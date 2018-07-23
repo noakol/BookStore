@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
-import {getBookList} from './Api';
+import {getBookList} from './Api/services';
 import './App.css';
+import BookList from './BookList';
 
 class App extends Component {
 
-  componentDidMount() {
-    getBookList();
+  // componentDidMount() {
+  //   getBookList().then((res) => {
+  //     console.log(res)
+  //   });
+  // }
+
+  clickHandler() {
+    getBookList().then((res) => {
+      console.log(res)
+    });
   }
 
   render() {
@@ -16,8 +25,9 @@ class App extends Component {
           <input type="text" id="uname" name="name"></input>
         </div>
         <div>
-          <button onClick={() => console.log('clicked')}>Submit</button>
+          <button onClick={() => this.clickHandler()}>Submit</button>
         </div>
+        <BookList />
       </div>
     )
   }

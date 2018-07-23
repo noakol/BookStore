@@ -1,3 +1,3 @@
 export default {
-    baseUrl: 'localhost:3000'
+    baseUrl: 'localhost:4000'
 }
